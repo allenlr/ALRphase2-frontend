@@ -1,13 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Filter from './Filter';
 import Form from './Form';
 import CoinList from './CoinList';
+import Header from './Header';
 
 function App() {
+
+  const [coinList, setCoinList] = useState([])
+
+  useEffect(() => {
+    fetch('http://localhost:3000/coins')
+    .then((res) => res.json())
+    .then((data) => setCoinList(data))
+  }, [])
+
   return (
     <div className="App">
+      <Header />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -22,6 +33,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <Filter />
+      <Form />
+      <CoinList coinList={coinList}/>
     </div>
   );
 }

@@ -1,8 +1,10 @@
 import React from 'react';
 
-function Coin(){
+function Coin({coin}){
     return (
-
+        <div>
+            {coin.name}
+        </div>
     )
 }
 
