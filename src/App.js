@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import Filter from './Filter';
+import Form from './Form';
+import CoinList from './CoinList';
 
 function App() {
   return (
