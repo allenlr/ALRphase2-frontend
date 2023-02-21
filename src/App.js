@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React, {useEffect, useState} from 'react';
 import Filter from './Filter';
@@ -25,12 +24,25 @@ function App() {
         backgroundRepeat: 'no-repeat',
         height: '100vh',
         backgroundColor: 'black',
+        display: 'flex',
+        justifyContent: 'space-between',
       }}
     >
-      <Header />
-      <Filter />
-      <Form />
-      <CoinList coinList={coinList}/>
+      
+        
+      <div style={{ width: '0%' }}>
+        <CoinList coinList={coinList}/>
+      </div>
+      <div style={{ width: '30%' }}>
+        <Filter />
+      </div>
+      <div style={{ width: '50%'}}>
+        <Header />
+      </div>
+      <div style={{ width: '10%' }}>
+        <Form />
+      </div>
+      
     </div>
   );
 }
