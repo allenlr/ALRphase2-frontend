@@ -17,22 +17,17 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
+    <div className="App"
+      style={{
+        backgroundImage: `url('https://www.mnp.ca/-/media/images/mnp/service/enterprise-risk/insights/f22/bitcoin-with-colorfull-blurred-background-and-reflection-jpg.jpg')`,
+        backgroundSize: 'contian',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        height: '100vh',
+        backgroundColor: 'black',
+      }}
+    >
       <Header />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
       <Filter />
       <Form />
       <CoinList coinList={coinList}/>
