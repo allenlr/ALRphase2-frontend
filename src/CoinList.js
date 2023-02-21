@@ -7,7 +7,7 @@ function CoinList({coinList}){
             display: 'flex',
             flexWrap: 'wrap',
             width: '600px',
-            height: '800px',
+            height: '950px',
             padding: '10px',
             overflow: 'scroll',
             scrollbarColor: 'rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.1)',

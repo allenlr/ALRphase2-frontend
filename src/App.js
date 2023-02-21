@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
-import Filter from './Filter';
+import Search from './Search';
 import Form from './Form';
 import CoinList from './CoinList';
 import Header from './Header';
@@ -19,7 +19,7 @@ function App() {
     <div className="App"
       style={{
         backgroundImage: `url('https://www.mnp.ca/-/media/images/mnp/service/enterprise-risk/insights/f22/bitcoin-with-colorfull-blurred-background-and-reflection-jpg.jpg')`,
-        backgroundSize: 'contian',
+        backgroundSize: 'contain',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         height: '100vh',
@@ -30,16 +30,34 @@ function App() {
     >
       
         
-      <div style={{ width: '0%' }}>
+      <div 
+        style={{ 
+          position: 'absolute',
+          right: '59%', 
+        }}>
         <CoinList coinList={coinList}/>
       </div>
-      <div style={{ width: '30%' }}>
-        <Filter />
+      <div 
+        style={{ 
+          position:'absolute', 
+          right:'42%',
+          top: '8%', 
+        }}>
+        <Search />
       </div>
-      <div style={{ width: '50%'}}>
+      <div 
+        style={{ 
+          position: 'absolute',
+          right:'40%',
+        }}>
         <Header />
       </div>
-      <div style={{ width: '10%' }}>
+      <div 
+        style={{ 
+          position: 'absolute',
+          right:'1%'
+           
+        }}>
         <Form />
       </div>
       
