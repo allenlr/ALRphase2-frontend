@@ -4,11 +4,13 @@ import Search from './Search';
 import Form from './Form';
 import CoinList from './CoinList';
 import Header from './Header';
+import CoinData from './CoinData';
 
 function App() {
 
   const [coinList, setCoinList] = useState([])
   const [originalCoinList, setOriginalCoinList] = useState([])
+  const [coinData, setCoinData] = useState({price: '', marketCap: '', name: '', image: ''})
 
   useEffect(() => {
     fetch('http://localhost:3000/coins')
@@ -37,7 +39,7 @@ function App() {
           position: 'absolute',
           right: '59%', 
         }}>
-        <CoinList coinList={coinList}/>
+        <CoinList coinList={coinList} setCoinData={setCoinData}/>
       </div>
       <div 
         style={{ 
@@ -61,6 +63,19 @@ function App() {
            
         }}>
         <Form />
+      </div>
+      <div
+        style={{
+          position: 'absolute',
+          right: '40%',
+          top: '50%',
+          display: 'flex',
+          flexWrap: 'wrap',
+          width: '200px',
+          height: '200px',
+          backgroundColor: '#292929',
+        }}>
+        <CoinData coinData={coinData}/>
       </div>
       
     </div>
