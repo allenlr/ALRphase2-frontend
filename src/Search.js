@@ -3,26 +3,21 @@ import React, {useState} from 'react'
 function Search({originalCoinList, setCoinList}){
     const [searchState, setSearchState] = useState('')
 
-    function handleSearch(e){
-        setSearchState(e.target.value)
-    }
-    function handleSubmit(e){
-        e.preventDefault();
-        setCoinList(originalCoinList.filter((coin) => searchState ? coin.name.toLowerCase() === searchState.toLowerCase() : true))
-        console.log(searchState)
-    }
-
     return (
         <div>
-            <form onSubmit={handleSubmit} >
             <label style={{
                 color: 'white',
                 padding:'10px'
             }}>Search for a coin :</label>
-            <input id="search" placeholder='type' value={searchState} onChange={(e) => handleSearch(e)}>
+            <input 
+                id="search" 
+                placeholder='Type...' 
+                value={searchState} 
+                onChange= {(e) => {
+                    setSearchState(e.target.value)
+                    setCoinList(originalCoinList.filter((coin) => searchState !== "" || searchState === 'Type...' ? coin.name.toLowerCase().includes(searchState.toLowerCase()) : true ))
+                }}>
             </input>
-            <button type='submit'>Search</button>
-            </form>
         </div>
     )
 }

@@ -15,7 +15,7 @@ function Header(){
                     padding: '1rem',
                     }}
                 >
-                    WELCOME
+                    COIN DATA
                 </h1>
         </div>
     )
