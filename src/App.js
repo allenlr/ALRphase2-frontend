@@ -8,11 +8,15 @@ import Header from './Header';
 function App() {
 
   const [coinList, setCoinList] = useState([])
+  const [originalCoinList, setOriginalCoinList] = useState([])
 
   useEffect(() => {
     fetch('http://localhost:3000/coins')
     .then((res) => res.json())
-    .then((data) => setCoinList(data))
+    .then((data) => {
+      setCoinList(data)
+      setOriginalCoinList(data)
+    })
   }, [])
 
   return (
@@ -28,8 +32,6 @@ function App() {
         justifyContent: 'space-between',
       }}
     >
-      
-        
       <div 
         style={{ 
           position: 'absolute',
@@ -40,10 +42,10 @@ function App() {
       <div 
         style={{ 
           position:'absolute', 
-          right:'42%',
+          right:'35%',
           top: '8%', 
         }}>
-        <Search />
+        <Search originalCoinList={originalCoinList} setCoinList={setCoinList} />
       </div>
       <div 
         style={{ 
