@@ -5,7 +5,16 @@ function CoinData({coinData}){
         <div>
             <img 
                 src={coinData.image} 
-                style={{width: '35px', height: '35px'}}
+                style={{
+                    width: '150px',
+                    height: '150px',
+                    position: 'absolute',
+                    backgroundSize: 'contain',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    right: '0%',
+                    top: '0%',
+                    }}
                 />
         </div>
     )

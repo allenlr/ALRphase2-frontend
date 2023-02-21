@@ -68,12 +68,11 @@ function App() {
         style={{
           position: 'absolute',
           right: '40%',
-          top: '50%',
+          top: '40%',
           display: 'flex',
           flexWrap: 'wrap',
           width: '200px',
           height: '200px',
-          backgroundColor: '#292929',
         }}>
         <CoinData coinData={coinData}/>
       </div>
