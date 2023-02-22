@@ -10,7 +10,8 @@ function App() {
 
   const [coinList, setCoinList] = useState([])
   const [originalCoinList, setOriginalCoinList] = useState([])
-  const [coinData, setCoinData] = useState({price: '', marketCap: '', name: '', image: ''})
+  const [coinData, setCoinData] = useState({price: '', marketCap: '', name: '', image: '', ticker: ''})
+
 
   useEffect(() => {
     fetch('http://localhost:3000/coins')
@@ -20,6 +21,18 @@ function App() {
       setOriginalCoinList(data)
     })
   }, [])
+
+  function onSubmitForm(newCoin){
+    fetch('http://localhost:3000/coins', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newCoin)
+    })
+    .then((res) => res.json())
+    .then((addedData) => setCoinList([...originalCoinList, addedData]))
+  }
 
   return (
     <div className="App"
@@ -62,21 +75,21 @@ function App() {
           right:'1%'
            
         }}>
-        <Form />
+        <Form onSubmitForm={onSubmitForm} />
       </div>
       <div
         style={{
           position: 'absolute',
           right: '40%',
           top: '40%',
-          display: 'flex',
+          display: coinData.name === '' ? 'none' : 'flex',
           flexWrap: 'wrap',
           width: '200px',
           height: '200px',
-        }}>
-        <CoinData coinData={coinData}/>
+        }}
+      >
+        <CoinData coinData={coinData} />
       </div>
-      
     </div>
   );
 }

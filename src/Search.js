@@ -3,6 +3,12 @@ import React, {useState} from 'react'
 function Search({originalCoinList, setCoinList}){
     const [searchState, setSearchState] = useState('')
 
+    const handleSearch = (e) => {
+        const searchValue = e.target.value;
+        setSearchState(searchValue);
+        setCoinList(originalCoinList.filter((coin) => searchValue !== "" || searchValue === 'Type...' ? coin.name.toLowerCase().includes(searchValue.toLowerCase()) : true ))
+    }
+
     return (
         <div>
             <label style={{
@@ -13,10 +19,8 @@ function Search({originalCoinList, setCoinList}){
                 id="search" 
                 placeholder='Type...' 
                 value={searchState} 
-                onChange= {(e) => {
-                    setSearchState(e.target.value)
-                    setCoinList(originalCoinList.filter((coin) => searchState !== "" || searchState === 'Type...' ? coin.name.toLowerCase().includes(searchState.toLowerCase()) : true ))
-                }}>
+                onChange= {handleSearch}
+            >
             </input>
         </div>
     )

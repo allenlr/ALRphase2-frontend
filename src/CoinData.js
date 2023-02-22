@@ -2,21 +2,33 @@ import React from 'react';
 
 function CoinData({coinData}){
     return (
-        <div>
-            <img 
-                src={coinData.image} 
-                style={{
-                    width: '150px',
-                    height: '150px',
-                    position: 'absolute',
-                    backgroundSize: 'contain',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                    right: '0%',
-                    top: '0%',
-                    }}
-                    alt={coinData.name}
-                />
+        <div style={{position: 'absolute', top: '-100%'}}>
+            <p>
+                <img 
+                    src={coinData.image} 
+                    style={{
+                        width: '50px',
+                        height: '50px',
+                        position: 'relative',
+                        backgroundSize: 'contain',
+                        backgroundRepeat: 'no-repeat',
+                        // right: '30%',
+                        top: '100%',
+                        }}
+                        alt={coinData.name}
+                    />
+            </p>
+            <div style={{color: 'white'}}>
+                <p >
+                    {coinData.name} ({coinData.ticker.toUpperCase()})
+                </p>
+                <p>
+                    Current Price (USD): ${coinData.price}
+                </p>
+                <p>
+                    Market Cap: {coinData.marketCap}
+                </p>
+            </div>
         </div>
     )
 }
