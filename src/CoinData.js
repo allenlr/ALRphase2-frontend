@@ -12,7 +12,6 @@ function CoinData({coinData}){
                         position: 'relative',
                         backgroundSize: 'contain',
                         backgroundRepeat: 'no-repeat',
-                        // right: '30%',
                         top: '100%',
                         }}
                         alt={coinData.name}

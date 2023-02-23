@@ -5,7 +5,6 @@ function Form({onSubmitForm}){
     const [newCoinSymbol, setNewCoinSymbol] = useState('');
     const [newCoinImage, setNewCoinImage] = useState('');
     const [newCoinId, setNewCoinId] = useState('');
-    // const [newCoin, setNewCoin] = useState({id: '', name: '', symbol: '', image: ''})
     
     
 
@@ -17,7 +16,6 @@ function Form({onSubmitForm}){
             symbol: newCoinSymbol,
             image: newCoinImage,
         }
-        // setNewCoin(newCoinEntry)
         onSubmitForm(newCoinEntry)
         console.log(newCoinEntry)
     }
