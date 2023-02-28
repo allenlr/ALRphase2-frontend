@@ -17,7 +17,6 @@ function Form({onSubmitForm}){
             image: newCoinImage,
         }
         onSubmitForm(newCoinEntry)
-        console.log(newCoinEntry)
     }
 
     return (
