@@ -6,7 +6,16 @@ Coin Data is a web-based application developed as a demonstration of competancy 
 
 ## Requirements
 
+No special requirements
+
 ## Installation
+
+1. Install Node.js on your computer if you haven't already. You can download the latest version of Node.js from the official website at https://nodejs.org.
+2. Clone the repository to your local machine. 
+Note: you will need to clone the backend to run the server for fetching data from the API as well as the frontend to run the application. The frontend and backend files will need to be in the same directory
+cloning frontend: type from within the file you wish to clone to "git clone git@github.com:allenlr/ALRphase2-frontend.git" in bash then hit enter
+cloning backend: type from within the file you wish to clone to "git clone git@github.com:allenlr/ALRphase2-backend.git" in bash
+3. Navigate to the project directory:
 
 ## Coinfiguration
 
