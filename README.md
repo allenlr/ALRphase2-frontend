@@ -19,6 +19,12 @@ Note: you will need to clone the backend to run the server for fetching data fro
     - type "cd 'project-directory'" replacing project-directory with the directory name you wish to enter, then hit enter.
 4. Install the dependencies using NPM:
     - type "npm install" then hit enter.
+5. Run the server.js file to fetch the data from the API and import it to the db/db.json file for the client to use.
+    - type "node server.js" then hit enter.
+6. Run the server
+    - type "npm start" then hit enter.
+7. Launch the client side web application
+    - navigate to the frontened directory and type "npm start" then hit enter.
 
 ## Coinfiguration
 
