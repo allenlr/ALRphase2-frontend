@@ -5,8 +5,9 @@ Coin Data is a web-based application developed as a demonstration of competancy 
 ## Technologies
 
 ## Requirements
-
-No special requirements
+- React library (should be installed separately)
+- An API that provides cryptocurrency data (the app is currently using CoinGeck API)
+- A working internet connection to fetch data from the API
 
 ## Installation
 
@@ -27,7 +28,7 @@ Note: you will need to clone the backend to run the server for fetching data fro
     - navigate to the frontened directory and type "npm install" then hit enter following by "npm start" and hitting enter.
 
 ## Coinfiguration
-
+- This app does not require any additional configuration outside of the UI. However, upon installation, the user will need to provide an API key to fetch real-time cryptocurrency data. To do this, the user must create an account with the CoinGecko API and obtain an API key. Once the API key is obtained, the user should create a .env file in the root directory and add the API key as a variable.
 
 ### images
-    background: https://www.mnp.ca/-/media/images/mnp/service/enterprise-risk/insights/f22/bitcoin-with-colorfull-blurred-background-and-reflection-jpg.jpg
+[background bitcoin picture](https://www.mnp.ca/-/media/images/mnp/service/enterprise-risk/insights/f22/bitcoin-with-colorfull-blurred-background-and-reflection-jpg.jpg)
