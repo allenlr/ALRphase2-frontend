@@ -11,8 +11,6 @@ entertainment.
 
 ## Requirements
 - React library (should be installed separately)
-- An API that provides cryptocurrency data (the app is currently using CoinGeck
-API)
 - A working internet connection to fetch data from the API
 
 ## Installation
@@ -32,8 +30,9 @@ backend files will need to be in the same directory.
     directory name you wish to enter, then hit enter.
 4. Install the dependencies using NPM:
     - type "npm install" then hit enter.
-5. From within the backend directory, run the server.js file to fetch the data
-from the API and import it to the db/db.json file for the client to use.
+5. From within the backend directory, run the server.js file to fetch the most 
+recent available data from the API and import it to the db/db.json file for the
+client to use.
     - type "node server.js" then hit enter.
 6. Run the server
     - type "npm start" then hit enter.
