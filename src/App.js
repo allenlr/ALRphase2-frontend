@@ -44,10 +44,11 @@ function App() {
         backgroundSize: 'contain',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        height: '109vh',
+        height: '110vh',
         backgroundColor: 'black',
         display: 'flex',
-        justifyContent: 'space-between',
+        // alignItems: 'center',
+        justifyContent: 'center',
       }}
     >
       <NavBar />
