@@ -9,10 +9,8 @@ function CoinData({coinData}){
                     style={{
                         width: '50px',
                         height: '50px',
-                        position: 'relative',
                         backgroundSize: 'contain',
                         backgroundRepeat: 'no-repeat',
-                        // top: '75%',
                         }}
                         alt={coinData.name}
                     />

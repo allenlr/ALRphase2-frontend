@@ -93,7 +93,7 @@ function App() {
         style={{
           position: 'absolute',
           right: '40%',
-          top: '40%',
+          top: '30%',
           display: coinData.name === '' ? 'none' : 'flex',
           flexWrap: 'wrap',
           width: '200px',
