@@ -5,12 +5,15 @@ import Form from './Form';
 import CoinList from './CoinList';
 import Header from './Header';
 import CoinData from './CoinData';
+import NavBar from './NavBar';
 
 function App() {
 
   const [coinList, setCoinList] = useState([])
   const [originalCoinList, setOriginalCoinList] = useState([])
   const [coinData, setCoinData] = useState({price: '', marketCap: '', name: '', image: '', ticker: ''})
+  // selectedCoin
+  // Route for Home, Coins, Form, About page
 
 
   useEffect(() => {
@@ -41,12 +44,22 @@ function App() {
         backgroundSize: 'contain',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        height: '100vh',
+        height: '109vh',
         backgroundColor: 'black',
         display: 'flex',
         justifyContent: 'space-between',
       }}
     >
+      <NavBar />
+        <div
+          style={{
+            position:'absolute',
+            right:'40%',
+            top: '0%',
+          }}
+          >
+          <Header />
+        </div>
       <div 
         style={{ 
           position: 'absolute',
@@ -57,8 +70,8 @@ function App() {
       <div 
         style={{ 
           position:'absolute', 
-          right:'35%',
-          top: '8%', 
+          right:'40%',
+          top: '20%', 
         }}>
         <Search originalCoinList={originalCoinList} setCoinList={setCoinList} />
       </div>
@@ -67,13 +80,12 @@ function App() {
           position: 'absolute',
           right:'40%',
         }}>
-        <Header />
+        
       </div>
       <div 
         style={{ 
           position: 'absolute',
           right:'1%'
-           
         }}>
         <Form onSubmitForm={onSubmitForm} />
       </div>

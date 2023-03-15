@@ -6,7 +6,8 @@ function CoinList({coinList, setCoinData}){
         <div style={{
             display: 'flex',
             flexWrap: 'wrap',
-            width: '600px',
+            marginTop: '90px',
+            width: '650px',
             height: '950px',
             padding: '10px',
             overflow: 'scroll',

@@ -13,7 +13,7 @@ function Search({originalCoinList, setCoinList}){
         <div>
             <label style={{
                 color: 'white',
-                padding:'10px'
+                padding:'10px',
             }}>Search for a coin :</label>
             <input 
                 id="search" 

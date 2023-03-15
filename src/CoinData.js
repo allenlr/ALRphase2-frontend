@@ -2,7 +2,7 @@ import React from 'react';
 
 function CoinData({coinData}){
     return (
-        <div style={{position: 'absolute', top: '-100%'}}>
+        <div>
             <p>
                 <img 
                     src={coinData.image} 
@@ -12,7 +12,7 @@ function CoinData({coinData}){
                         position: 'relative',
                         backgroundSize: 'contain',
                         backgroundRepeat: 'no-repeat',
-                        top: '100%',
+                        // top: '75%',
                         }}
                         alt={coinData.name}
                     />
