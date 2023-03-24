@@ -10,6 +10,7 @@ import NavBar from './NavBar';
 function App() {
 
   const [coinList, setCoinList] = useState([])
+  const [searchState, setSearchState] = useState('')
   const [selectedCoinData, setSelectedCoinData] = useState({
     price: '',
     marketCap: '', 
@@ -29,8 +30,6 @@ function App() {
     })
   }, [])
 
-  console.log(coinList)
-
   function onSubmitForm(newCoin){
     fetch('http://localhost:3000/coins', {
       method: 'POST',
@@ -41,6 +40,14 @@ function App() {
     })
     .then((res) => res.json())
     .then((addedData) => setCoinList([...coinList, addedData]))
+  }
+
+
+
+  const filteredCoins = coinList.filter((coin) => searchState !== "" || searchState === 'Type...' ? coin.name.toLowerCase().includes(searchState.toLowerCase()) : true);
+
+  function handleSearch(userSearch){
+    setSearchState(userSearch)
   }
 
   return (
@@ -72,7 +79,7 @@ function App() {
           position: 'absolute',
           right: '59%', 
         }}>
-        <CoinList coinList={coinList} setSelectedCoinData={setSelectedCoinData}/>
+        <CoinList coinList={filteredCoins} setSelectedCoinData={setSelectedCoinData}/>
       </div>
       <div 
         style={{ 
@@ -80,7 +87,7 @@ function App() {
           right:'40%',
           top: '20%', 
         }}>
-        <Search setCoinList={setCoinList} />
+        <Search onSearch={handleSearch} search={searchState} />
       </div>
       <div 
         style={{ 

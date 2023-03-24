@@ -1,13 +1,6 @@
-import React, {useState} from 'react'
+import React from 'react'
 
-function Search({originalCoinList, setCoinList}){
-    const [searchState, setSearchState] = useState('')
-
-    const handleSearch = (e) => {
-        const searchValue = e.target.value;
-        setSearchState(searchValue);
-        setCoinList(originalCoinList.filter((coin) => searchValue !== "" || searchValue === 'Type...' ? coin.name.toLowerCase().includes(searchValue.toLowerCase()) : true ))
-    }
+function Search({search, onSearch}){
 
     return (
         <div>
@@ -18,8 +11,8 @@ function Search({originalCoinList, setCoinList}){
             <input 
                 id="search" 
                 placeholder='Type...' 
-                value={searchState} 
-                onChange= {handleSearch}
+                value={search} 
+                onChange= {(e) => onSearch(e.target.value)}
             >
             </input>
         </div>
