@@ -1,7 +1,7 @@
 import React from 'react';
 import Coin from './Coin';
 
-function CoinList({coinList, setCoinData}){
+function CoinList({coinList, setSelectedCoinData}){
     return(
         <div style={{
             display: 'flex',
@@ -15,7 +15,7 @@ function CoinList({coinList, setCoinData}){
             backgroundColor: 'linear-gradient(to bottom right, #292929, #404040)',
             overflowX: 'hidden'
         }}>
-            {coinList.map((coin) => <Coin key={coin.id} coin={coin} setCoinData={setCoinData} />)}
+            {coinList.map((coin) => <Coin key={coin.id} coin={coin} setSelectedCoinData={setSelectedCoinData} />)}
         </div>
     )
 }

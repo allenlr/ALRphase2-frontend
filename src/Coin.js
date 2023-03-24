@@ -1,9 +1,9 @@
 import React from 'react';
 
 
-function Coin({coin, setCoinData}){
+function Coin({coin, setSelectedCoinData}){
     return (
-        <div onClick={() => setCoinData({price: coin.current_price, marketCap: coin.market_cap, name: coin.name, image: coin.image, ticker: coin.symbol})}>
+        <div onClick={() => setSelectedCoinData({price: coin.current_price, marketCap: coin.market_cap, name: coin.name, image: coin.image, ticker: coin.symbol})}>
             <p style={{
                 margin: '20px',
                 width: '60px',
