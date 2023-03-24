@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Search from './Search';
 import Form from './Form';
 import CoinList from './CoinList';
@@ -68,10 +68,16 @@ function App() {
     >
       <NavBar />
           <Header />
-          <CoinList coinList={filteredCoins} setSelectedCoinData={setSelectedCoinData}/>
-          <Search onSearch={handleSearch} search={searchState} />
-          <Form onSubmitForm={onSubmitForm} />
+          <Switch>
+          <Route exact path='/'>
+            <CoinList coinList={filteredCoins} setSelectedCoinData={setSelectedCoinData}/>
+            <Search onSearch={handleSearch} search={searchState} />
+          </Route>
+          <Route path='/form'>
+            <Form onSubmitForm={onSubmitForm} />
+          </Route>
           <SelectedCoinData selectedCoinData={selectedCoinData} />
+          </Switch>
     </div>
   );
 }
