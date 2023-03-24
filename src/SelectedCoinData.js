@@ -1,29 +1,29 @@
 import React from 'react';
 
-function CoinData({coinData}){
+function SelectedCoinData({ selectedCoinData }){
     return (
         <div>
             <p>
                 <img 
-                    src={coinData.image} 
+                    src={selectedCoinData.image} 
                     style={{
                         width: '50px',
                         height: '50px',
                         backgroundSize: 'contain',
                         backgroundRepeat: 'no-repeat',
                         }}
-                        alt={coinData.name}
+                        alt={selectedCoinData.name}
                     />
             </p>
             <div style={{color: 'white'}}>
                 <p >
-                    {coinData.name} ({coinData.ticker.toUpperCase()})
+                    {selectedCoinData.name} ({selectedCoinData.ticker.toUpperCase()})
                 </p>
                 <p>
-                    Current Price (USD): ${coinData.price}
+                    Current Price (USD): ${selectedCoinData.price}
                 </p>
                 <p>
-                    Market Cap: {coinData.marketCap}
+                    Market Cap: {selectedCoinData.marketCap}
                 </p>
             </div>
         </div>
@@ -31,4 +31,4 @@ function CoinData({coinData}){
 }
 
 
-export default CoinData;
+export default SelectedCoinData;

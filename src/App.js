@@ -4,14 +4,19 @@ import Search from './Search';
 import Form from './Form';
 import CoinList from './CoinList';
 import Header from './Header';
-import CoinData from './CoinData';
+import SelectedCoinData from './SelectedCoinData';
 import NavBar from './NavBar';
 
 function App() {
 
   const [coinList, setCoinList] = useState([])
-  const [originalCoinList, setOriginalCoinList] = useState([])
-  const [coinData, setCoinData] = useState({price: '', marketCap: '', name: '', image: '', ticker: ''})
+  const [selectedCoinData, setSelectedCoinData] = useState({
+    price: '',
+    marketCap: '', 
+    name: '', 
+    image: '', 
+    ticker: ''
+  })
   // selectedCoin
   // Route for Home, Coins, Form, About page
 
@@ -21,9 +26,10 @@ function App() {
     .then((res) => res.json())
     .then((data) => {
       setCoinList(data)
-      setOriginalCoinList(data)
     })
   }, [])
+
+  console.log(coinList)
 
   function onSubmitForm(newCoin){
     fetch('http://localhost:3000/coins', {
@@ -34,7 +40,7 @@ function App() {
       body: JSON.stringify(newCoin)
     })
     .then((res) => res.json())
-    .then((addedData) => setCoinList([...originalCoinList, addedData]))
+    .then((addedData) => setCoinList([...coinList, addedData]))
   }
 
   return (
@@ -66,7 +72,7 @@ function App() {
           position: 'absolute',
           right: '59%', 
         }}>
-        <CoinList coinList={coinList} setCoinData={setCoinData}/>
+        <CoinList coinList={coinList} setSelectedCoinData={setSelectedCoinData}/>
       </div>
       <div 
         style={{ 
@@ -74,7 +80,7 @@ function App() {
           right:'40%',
           top: '20%', 
         }}>
-        <Search originalCoinList={originalCoinList} setCoinList={setCoinList} />
+        <Search setCoinList={setCoinList} />
       </div>
       <div 
         style={{ 
@@ -95,13 +101,13 @@ function App() {
           position: 'absolute',
           right: '40%',
           top: '30%',
-          display: coinData.name === '' ? 'none' : 'flex',
+          display: selectedCoinData.name === '' ? 'none' : 'flex',
           flexWrap: 'wrap',
           width: '200px',
           height: '200px',
         }}
       >
-        <CoinData coinData={coinData} />
+        <SelectedCoinData selectedCoinData={selectedCoinData} />
       </div>
     </div>
   );

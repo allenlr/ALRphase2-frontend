@@ -26,7 +26,7 @@ backend files will need to be in the same directory.
     - cloning backend: type from within the file you wish to clone to "git clone
     git@github.com:allenlr/ALRphase2-backend.git" in bash then hit enter.
 3. Navigate to the project directory:
-    - type "cd 'project-directory'" replacing project-directory with the
+    - type "cd 'project-directory' replacing project-directory with the
     directory name you wish to enter, then hit enter.
 4. Install the dependencies using NPM:
     - type "npm install" then hit enter.
@@ -38,7 +38,7 @@ client to use.
     - type "npm start" then hit enter.
 7. Launch the client side web application
     - navigate to the frontened directory and type "npm install" then hit enter
-    following by "npm start" and hitting enter.
+    followed by "npm start" and hitting enter.
 
 ## Coinfiguration
 - This app does not require any additional configuration outside of the UI.
