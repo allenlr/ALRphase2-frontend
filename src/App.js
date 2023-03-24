@@ -1,5 +1,6 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
+import { Switch, Route } from 'react-router-dom';
 import Search from './Search';
 import Form from './Form';
 import CoinList from './CoinList';
@@ -11,6 +12,7 @@ function App() {
 
   const [coinList, setCoinList] = useState([])
   const [searchState, setSearchState] = useState('')
+  const [page, setPage] = useState('/')
   const [selectedCoinData, setSelectedCoinData] = useState({
     price: '',
     marketCap: '', 
@@ -65,6 +67,7 @@ function App() {
       }}
     >
       <NavBar />
+      
         <div
           style={{
             position:'absolute',
@@ -74,48 +77,43 @@ function App() {
           >
           <Header />
         </div>
-      <div 
-        style={{ 
-          position: 'absolute',
-          right: '59%', 
-        }}>
-        <CoinList coinList={filteredCoins} setSelectedCoinData={setSelectedCoinData}/>
-      </div>
-      <div 
-        style={{ 
-          position:'absolute', 
-          right:'40%',
-          top: '20%', 
-        }}>
-        <Search onSearch={handleSearch} search={searchState} />
-      </div>
-      <div 
-        style={{ 
-          position: 'absolute',
-          right:'40%',
-        }}>
-        
-      </div>
-      <div 
-        style={{ 
-          position: 'absolute',
-          right:'1%'
-        }}>
-        <Form onSubmitForm={onSubmitForm} />
-      </div>
-      <div
-        style={{
-          position: 'absolute',
-          right: '40%',
-          top: '30%',
-          display: selectedCoinData.name === '' ? 'none' : 'flex',
-          flexWrap: 'wrap',
-          width: '200px',
-          height: '200px',
-        }}
-      >
-        <SelectedCoinData selectedCoinData={selectedCoinData} />
-      </div>
+        <div 
+          style={{ 
+            position: 'absolute',
+            right: '59%', 
+          }}>
+          <CoinList coinList={filteredCoins} setSelectedCoinData={setSelectedCoinData}/>
+        </div>
+        <div 
+          style={{ 
+            position:'absolute', 
+            right:'40%',
+            top: '20%', 
+          }}>
+          <Search onSearch={handleSearch} search={searchState} />
+        </div>
+        <div 
+          style={{ 
+            position: 'absolute',
+            right:'1%',
+            top: '5%'
+          }}>
+          <Form onSubmitForm={onSubmitForm} />
+        </div>
+        <div
+          style={{
+            position: 'absolute',
+            right: '40%',
+            top: '30%',
+            display: selectedCoinData.name === '' ? 'none' : 'flex',
+            flexWrap: 'wrap',
+            width: '200px',
+            height: '200px',
+          }}
+        >
+          <SelectedCoinData selectedCoinData={selectedCoinData} />
+        </div>
+      
     </div>
   );
 }
