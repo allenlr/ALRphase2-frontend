@@ -13,7 +13,9 @@ function CoinList({coinList, setSelectedCoinData}){
             overflow: 'scroll',
             scrollbarColor: 'rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.1)',
             backgroundColor: 'linear-gradient(to bottom right, #292929, #404040)',
-            overflowX: 'hidden'
+            overflowX: 'hidden',
+            position: 'absolute',
+            right: '59%', 
         }}>
             {coinList.map((coin) => <Coin key={coin.id} coin={coin} setSelectedCoinData={setSelectedCoinData} />)}
         </div>
