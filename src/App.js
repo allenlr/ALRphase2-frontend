@@ -7,6 +7,7 @@ import CoinList from './CoinList';
 import Header from './Header';
 import SelectedCoinData from './SelectedCoinData';
 import NavBar from './NavBar';
+import About from './About';
 
 function App() {
 
@@ -76,6 +77,9 @@ function App() {
             </Route>
             <Route exact path='/form'>
               <Form onSubmitForm={onSubmitForm} />
+            </Route>
+            <Route path='/about'>
+              <About />
             </Route>
           
     </div>
