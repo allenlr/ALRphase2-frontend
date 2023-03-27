@@ -20,6 +20,7 @@ function App() {
     image: '', 
     ticker: ''
   })
+
   // selectedCoin
   // Route for Home, Coins, Form, About page
 
@@ -51,7 +52,7 @@ function App() {
   function handleSearch(userSearch){
     setSearchState(userSearch)
   }
-
+  console.log(page)
   return (
     <div className="App"
       style={{
@@ -66,18 +67,18 @@ function App() {
         justifyContent: 'center',
       }}
     >
-      <NavBar />
+      <NavBar onChangePage={setPage} />
           <Header />
           <Switch>
-          <Route exact path='/'>
-            <CoinList coinList={filteredCoins} setSelectedCoinData={setSelectedCoinData}/>
-            <Search onSearch={handleSearch} search={searchState} />
-          </Route>
-          <Route path='/form'>
-            <Form onSubmitForm={onSubmitForm} />
-          </Route>
-          <SelectedCoinData selectedCoinData={selectedCoinData} />
+            <Route exact path='/'>
+              <CoinList coinList={filteredCoins} setSelectedCoinData={setSelectedCoinData}/>
+              <Search onSearch={handleSearch} search={searchState} />
+            </Route>
+            <Route exact path='/form'>
+              <Form onSubmitForm={onSubmitForm} />
+            </Route>
           </Switch>
+          <SelectedCoinData selectedCoinData={selectedCoinData} />
     </div>
   );
 }

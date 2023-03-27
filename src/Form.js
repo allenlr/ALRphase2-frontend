@@ -23,8 +23,8 @@ function Form({onSubmitForm}){
         <div style={{
             color: "white",
             position: 'absolute',
-            right:'1%',
-            top: '5%'
+            // right:'1%',
+            top: '20%'
         }}>
             <h3>Add your own project!</h3>
             <form onSubmit={handleSubmit}>

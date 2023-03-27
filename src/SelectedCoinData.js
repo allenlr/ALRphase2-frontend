@@ -1,6 +1,7 @@
 import React from 'react';
 
 function SelectedCoinData({ selectedCoinData }){
+
     return (
         <div 
             style={{

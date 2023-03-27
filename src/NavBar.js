@@ -1,6 +1,6 @@
 import React from 'react'
 // eslint-disable-next-line
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 function NavBar(){
     return(
@@ -18,10 +18,12 @@ function NavBar(){
                 right:0,
                 height: '15px',
             }}
+            // className='active'
         >
             <div style={{ display: 'flex', flexDirection: 'row'}}>
-                <p style={{ marginRight: '2rem' }}>Home</p>
-                <p>Form</p>
+                <NavLink exact to='/' style={{ marginRight: '2rem' }}>Home</NavLink>
+                <NavLink to='/form' style={{ marginRight: '2rem' }}>Form</NavLink>
+                <NavLink to='/about'>About</NavLink>
             </div>
         </nav>
     )
