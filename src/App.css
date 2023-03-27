@@ -44,5 +44,5 @@ nav a:active {
 }
 
 nav a.active {
-    background-color: blue;
+    background-color: lightcyan;
 }

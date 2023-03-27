@@ -72,11 +72,12 @@ function App() {
             <Route exact path='/'>
               <CoinList coinList={filteredCoins} setSelectedCoinData={setSelectedCoinData}/>
               <Search onSearch={handleSearch} search={searchState} />
+              <SelectedCoinData selectedCoinData={selectedCoinData} />
             </Route>
             <Route exact path='/form'>
               <Form onSubmitForm={onSubmitForm} />
             </Route>
-          <SelectedCoinData selectedCoinData={selectedCoinData} />
+          
     </div>
   );
 }
