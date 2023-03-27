@@ -12,7 +12,7 @@ function App() {
 
   const [coinList, setCoinList] = useState([])
   const [searchState, setSearchState] = useState('')
-  const [page, setPage] = useState('/')
+  // const [page, setPage] = useState('/')
   const [selectedCoinData, setSelectedCoinData] = useState({
     price: '',
     marketCap: '', 
@@ -52,7 +52,7 @@ function App() {
   function handleSearch(userSearch){
     setSearchState(userSearch)
   }
-  console.log(page)
+
   return (
     <div className="App"
       style={{
@@ -67,7 +67,7 @@ function App() {
         justifyContent: 'center',
       }}
     >
-      <NavBar onChangePage={setPage} />
+      <NavBar />
           <Header />
           <Switch>
             <Route exact path='/'>
