@@ -70,20 +70,21 @@ function App() {
       <NavBar />
           <Header />
           <Switch>
-            <Route exact path='/'>
-              <CoinList coinList={filteredCoins} setSelectedCoinData={setSelectedCoinData}/>
-              <Search onSearch={handleSearch} search={searchState} />
-              <SelectedCoinData selectedCoinData={selectedCoinData} />
-            </Route>
             <Route path='/form'>
               <Form onSubmitForm={onSubmitForm} />
             </Route>
             <Route path='/about'>
               <About />
             </Route>
+            <Route exact path='/'>
+              <CoinList coinList={filteredCoins} setSelectedCoinData={setSelectedCoinData}/>
+              <Search onSearch={handleSearch} search={searchState} />
+              <SelectedCoinData selectedCoinData={selectedCoinData} />
+            </Route>
+            <Route path='*'>
+              <h1 style={{position: 'absolute', color: 'red', top: '40%'}}>404 not found</h1>
+            </Route>
           </Switch>
-            
-          
     </div>
   );
 }
