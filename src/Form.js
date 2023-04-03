@@ -1,29 +1,36 @@
 import React, {useState} from 'react';
 
 function Form({onSubmitForm}){
-    const [newCoinName, setNewCoinName] = useState('');
-    const [newCoinSymbol, setNewCoinSymbol] = useState('');
-    const [newCoinImage, setNewCoinImage] = useState('');
-    const [newCoinId, setNewCoinId] = useState('');
+    // const [newCoinName, setNewCoinName] = useState('');
+    // const [newCoinSymbol, setNewCoinSymbol] = useState('');
+    // const [newCoinImage, setNewCoinImage] = useState('');
+    // const [newCoinId, setNewCoinId] = useState('');
+    const [newCoinData, setNewCoinData] = useState({
+        id: '',
+        name: '',
+        symbol: '',
+        image: '',
+    })
     
-    
+    function handleFormChanges(e) {
+        const keyName = e.target.name
+        setNewCoinData({
+            ...newCoinData,
+            [keyName]: e.target.value,
+            id: newCoinData.name
+
+        })
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newCoinEntry = {
-            id: newCoinId,
-            name: newCoinName,
-            symbol: newCoinSymbol,
-            image: newCoinImage,
-        }
-        onSubmitForm(newCoinEntry)
+        onSubmitForm(newCoinData)
     }
 
     return (
         <div style={{
             color: "white",
             position: 'absolute',
-            // right:'1%',
             top: '20%'
         }}>
             <h3>Add your own project!</h3>
@@ -32,12 +39,9 @@ function Form({onSubmitForm}){
                 <p>
                     <input 
                         type="text"
-                        value={newCoinName}
-                        onChange={(e) => {
-                            setNewCoinName(e.target.value)
-                            setNewCoinId(e.target.value)
-                            }
-                        }
+                        value={newCoinData.name}
+                        name='name'
+                        onChange={handleFormChanges}
                     >
                     </input>
                 </p>
@@ -45,8 +49,9 @@ function Form({onSubmitForm}){
                 <p>
                     <input 
                         type="text"
-                        value={newCoinSymbol}
-                        onChange={(e) => setNewCoinSymbol(e.target.value)}
+                        value={newCoinData.ticker}
+                        name='symbol'
+                        onChange={handleFormChanges}
                     >
                     </input>
                 </p>
@@ -54,8 +59,9 @@ function Form({onSubmitForm}){
                 <p>
                     <input 
                         type="text"
-                        value={newCoinImage}
-                        onChange={(e) => setNewCoinImage(e.target.value)} 
+                        value={newCoinData.image}
+                        name='image'
+                        onChange={handleFormChanges} 
                     >
                     </input>
                 </p>

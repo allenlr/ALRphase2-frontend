@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Search from './Search';
 import Form from './Form';
 import CoinList from './CoinList';
@@ -42,8 +42,8 @@ function App() {
       },
       body: JSON.stringify(newCoin)
     })
-    .then((res) => res.json())
-    .then((addedData) => setCoinList([...coinList, addedData]))
+      .then((res) => res.json())
+      .then((addedData) => setCoinList([...coinList, addedData]))
   }
 
 
@@ -64,23 +64,25 @@ function App() {
         height: '110vh',
         backgroundColor: 'black',
         display: 'flex',
-        // alignItems: 'center',
         justifyContent: 'center',
       }}
     >
       <NavBar />
           <Header />
+          <Switch>
             <Route exact path='/'>
               <CoinList coinList={filteredCoins} setSelectedCoinData={setSelectedCoinData}/>
               <Search onSearch={handleSearch} search={searchState} />
               <SelectedCoinData selectedCoinData={selectedCoinData} />
             </Route>
-            <Route exact path='/form'>
+            <Route path='/form'>
               <Form onSubmitForm={onSubmitForm} />
             </Route>
             <Route path='/about'>
               <About />
             </Route>
+          </Switch>
+            
           
     </div>
   );
